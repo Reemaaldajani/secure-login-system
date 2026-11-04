@@ -1,0 +1,13 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Database
+users.db
+
+# Secrets
+.env
+
+# Editor
+.vscode/

@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    image: secure-login-system
+    ports:
+      - "5001:5000"
+    volumes:
+      - type: bind
+        source: ./users.db
+        target: /app/users.db
