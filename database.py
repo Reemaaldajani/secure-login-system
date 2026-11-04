@@ -15,23 +15,24 @@ CREATE TABLE IF NOT EXISTS users (
 
 conn.commit()
 
-username = input("Enter username: ")
-password = getpass("Enter password: ")
-role = input("Enter role (admin/user): ").lower()
+if __name__ == "__main__":
+    username = input("Enter username: ")
+    password = getpass("Enter password: ")
+    role = input("Enter role (admin/user): ").lower()
 
-if role not in ("admin", "user"):
-    print("Invalid role")
+    if role not in ("admin", "user"):
+        print("Invalid role")
 
-else:
-    try:
-        cursor.execute(
-            "INSERT INTO users VALUES (?, ?, ?)",
-            (username, generate_password_hash(password), role)
-        )
-        conn.commit()
-        print("User created successfully!")
+    else:
+        try:
+            cursor.execute(
+                "INSERT INTO users VALUES (?, ?, ?)",
+                (username, generate_password_hash(password), role)
+            )
+            conn.commit()
+            print("User created successfully!")
 
-    except sqlite3.IntegrityError:
-        print("Username already exists!")
+        except sqlite3.IntegrityError:
+            print("Username already exists!")
 
-conn.close()
+    conn.close()
