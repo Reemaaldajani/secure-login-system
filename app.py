@@ -34,7 +34,7 @@ def login():
         if is_locked(username):
             return """
             <h3 style="color:red; text-align:center;">
-                🔒 Account Locked<br>
+                 Account Locked<br>
                 Try again after 5 minutes
             </h3>
             """
@@ -54,10 +54,10 @@ def login():
 
             return f"""
             <h2 style="text-align:center;">
-                ☑ Welcome {user[0]}
+                 Welcome {user[0]}
             </h2>
             <p style="text-align:center;">
-                Login successful 🎉
+                Login successful 
             </p>
             """
         else:
@@ -67,7 +67,7 @@ def login():
 
             return """
             <h3 style="color:red; text-align:center;">
-                ❌ Login Failed
+                 Login Failed
             </h3>
             <a href="/">Try Again</a>
             """

@@ -83,3 +83,14 @@ The workflow includes:
 - Installing dependencies.
 - Running automated tests.
 - Building the Docker image.
+
+## Application Screenshots
+
+### Successful Login
+![Login Success](screenshots/login-success.png)
+
+### Failed Login
+![Login Failed](screenshots/login-failed.png)
+
+### Account Locked
+![Account Locked](screenshots/account-locked.png)
