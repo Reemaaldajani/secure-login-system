@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: secure-login
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: secure-login
+
+  template:
+    metadata:
+      labels:
+        app: secure-login
+
+    spec:
+      containers:
+        - name: secure-login
+          image: secure-login-system:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
